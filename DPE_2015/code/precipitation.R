@@ -2,8 +2,8 @@
 # Script for aggregation precipitation data from GPCP V2.2
 # Data made available in ASCII-format by David Bolvin from NASA GPCP
 # Script written by Edwin de Jonge from Statistics Netherlands
-# Original files can be found @ https://github.com/edwindj/precipitation
-# Required shape-files can be found @ http://thematicmapping.org/downloads/world_borders.php
+# Original files can be found at https://github.com/edwindj/precipitation
+# Required shape-files can be found at http://thematicmapping.org/downloads/world_borders.php
 # In order to calculate yearly averages at the original grid-resolution
 # simply comment out the following line:
 # r.africa <- disaggregate(r.africa, fact=5)
