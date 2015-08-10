@@ -1,5 +1,5 @@
 *******************************************************************************
-* Replication data for                                                        *
+* Replication code (estimation) for                                           *
 * "Economic Shocks & Civil Conflict in Sub-Saharan Africa 1981-2010"          *
 * Published in Defence and Peace Economics, 2015, 26 (2)                      *
 * http://www.tandfonline.com/doi/full/10.1080/10242694.2014.887489            *
