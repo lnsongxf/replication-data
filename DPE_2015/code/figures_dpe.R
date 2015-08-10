@@ -1,8 +1,12 @@
 #******************************************************************************
-# R-script for figures in paper
-# This version:  07-12-2014
-# First version: 07-12-2013 
+# Replication code (figures) for                                              #
+# "Economic Shocks & Civil Conflict in Sub-Saharan Africa 1981-2010"          #
+# Published in Defence and Peace Economics, 2015, 26 (2)                      #
+# http://www.tandfonline.com/doi/full/10.1080/10242694.2014.887489            #
 #******************************************************************************
+
+# This version:  07-12-2014                                                   *
+# First version: 07-12-2013                                                   *
 
 setwd("[SPECIFY DIR]")
 
@@ -21,12 +25,9 @@ d<-read.dta("tidy_data/re-analysis_shocks_conflict.dta")
 africa<-readShapeSpatial("raw_data/shp/africa.shp") # Check whether path is correct
 data<-read.csv("tidy_data/map_data.csv",header=TRUE)
 
-#***************************************
-#### Figure 1 ####
-# Geographic raster
-# 2.5 and 0.5 degrees resolution
-#***************************************
+#### FIGURE1: Geographic raster at 2.5 and 0.5 degrees resolution ####
 
+# Margin settings
 par(mar=c(2,2,2,2))
 
 # Plot Congo basin
@@ -52,15 +53,14 @@ degAxis(2)
 degAxis(1)
 map.grid(c(10, 42.5, -32.5, 7.5),nx=70,ny=85,labels=F, col=1, pretty=FALSE)
 
-#***************************************
-#### Figure 2 ####
-# Example rainfall
-#***************************************
+#### FIGURE 2: Example rainfall ####
 
+## Take Sudan as example
 rain<-d[d$countrycode=="SDN",]$gpcp
 rain<-rain[5:15]
 x<-0:10
 
+# Plot
 plot(x,rain,type="h",lwd=10,lend=3,col="steelblue4",axes=FALSE,xlab="",ylab="")
 abline(h=mean(rain),lwd=2,lty=2)
 axis(1,las=1,at=seq(0,10,1))
@@ -68,11 +68,9 @@ axis(2,las=1,at=c(mean(rain)-2*sd(rain),mean(rain)-sd(rain),mean(rain),
                   mean(rain)+sd(rain),mean(rain)+2*sd(rain)),
      labels=c(expression(-2*~sigma,-~sigma,mu,sigma,2*~sigma)))
 
-#***************************************
-##### Figure 3 (a) ####
-# Economic growth
-#***************************************
+##### FIGURE 3(a): Economic growth ####
 
+# Prepare data
 require(plyr)
 g<-ddply(d,.(year), summarise,
          mean=mean(gdp_g,na.rm=TRUE)*100,
@@ -93,12 +91,10 @@ axis(2,at=seq(-100,100,25),las=1,tck=-0.02,cex.axis=1.2)
 axis(2,at=seq(-100,100,5),labels=FALSE,tck=-0.01)
 mtext("Percent",side=2,line=3,cex=1.2)
 
-#***************************************
-#### Figure 3 (b-c) ####
-# Conflict onset and average rainfall
-#***************************************
+#### FIGURE 3(b-c): Conflict onset and average rainfall ####
 
-# Prepare data:
+## Prepare data:
+
 # Add column with row order
 africa@data <- cbind(c(1:dim(africa)[1]),
                      africa@data[,c("ISO3","NAME","LAT","LON")])
@@ -126,10 +122,7 @@ brks<-c(100,400,700,1000,1300,1600,1900,2100,2400)
 spplot(africadat,"gpcp",at=brks,col.regions=colours,scales=list(draw=TRUE),
        main="")
 
-#***************************************
-#### Figure 3 (d) ####
-# Conflict onset and incidence
-#***************************************
+#### FIGURE 3(d): Conflict onset and incidence ####
 
 # Housekeeping
 acd<-ddply(d,.(year), summarise,
