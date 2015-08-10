@@ -29,9 +29,7 @@ local i = `i' + 1
 global x_id= "pt8 lnpop_l polity2sq_l y_0 preg mountains oildummy"
 
 
-*******************************************************************************
-* Table 2: IV-2SLS (First-stage): Economic growth & rainfall                  * 
-*******************************************************************************
+*** TABLE 2: IV-2SLS (First-stage): Economic growth & rainfall                  
 *	(1) 
 reg gdp_g gpcp_g gpcp_gl, robust cluster(ccode)
 *	(2) 
@@ -45,9 +43,7 @@ reg gdp_g gpcp_d gpcp_dl Iccode* Iccyear*, robust cluster(ccode)
 *	(6) 
 reg gdp_g gpcp_d gpcp_dl $x_id Iccyear*, robust cluster(ccode)
 
-*******************************************************************************
-* Table 3: Table 5: OLS: Growth per sector & rainfall                         *
-*******************************************************************************
+*** TABLE 3: OLS: Growth per sector & rainfall                         
 * 	(1) 
 reg agri_g gpcp_g gpcp_gl Iccode* Iccyear*, robust cluster(ccode)
 *	(2) 
@@ -65,9 +61,7 @@ reg ind_g gpcp_d gpcp_dl Iccode* Iccyear*, robust cluster(ccode)
 *	(8)
 reg ind_g gpcp_d gpcp_dl $x_id Iccyear*, robust cluster(ccode)
 
-*******************************************************************************
-* Table 4: Reduced form: Conflict onset & rainfall                            *
-*******************************************************************************
+*** TABLE 4: Reduced form: Conflict onset & rainfall                         
 *	(1)
 reg conflict_onset gpcp_g gpcp_gl Iccode* Iccyear*, robust cluster(ccode)
 *	(2)
@@ -81,9 +75,7 @@ reg conflict_onset gpcp_d gpcp_dl $x_id Iccyear*, robust cluster(ccode)
 *	(6)
 relogit conflict_onset gpcp_d gpcp_dl $x_id, cluster(ccode) 
 
-*******************************************************************************
-* Table 5: IV-2SLS (second stage): Conflict onset & economic growth           *
-*******************************************************************************
+*** TABLE 5: IV-2SLS (second stage): Conflict onset & economic growth           
 *	(1)
 reg conflict_onset gdp_g gdp_gl (gpcp_g gpcp_gl), robust cluster(ccode)
 *	(2)
@@ -97,9 +89,7 @@ reg conflict_onset gdp_g gdp_gl Iccode* Iccyear* (gpcp_d gpcp_dl Iccode* Iccyear
 *	(6)
 reg conflict_onset gdp_g gdp_gl $x_id Iccyear* (gpcp_d gpcp_dl $x_id Iccyear*), robust cluster(ccode)
 
-*******************************************************************************
-* Table 6: IV-2SLS (second stage): Conflict onset & economic growth per sector*
-*******************************************************************************
+*** TABLE 6: IV-2SLS (second stage): Conflict onset & economic growth per sector
 *	(1)
 reg conflict_onset agri_g agri_gl Iccode* Iccyear* (gpcp_d gpcp_dl Iccode* Iccyear*), robust cluster(ccode)
 *	(2)
@@ -109,10 +99,7 @@ reg conflict_onset ind_g ind_gl Iccode* Iccyear* (gpcp_d gpcp_dl Iccode* Iccyear
 *	(4)
 reg conflict_onset ind_g ind_gl $x_id Iccyear* (gpcp_d gpcp_dl $x_id Iccyear*), robust cluster(ccode)
 
-*******************************************************************************
-* Table 7: IV-2SLS (second stage): Conflict onset (5-year intermittency)      *
-* & economic growth                                                           *
-*******************************************************************************
+*** TABLE 7: IV-2SLS (second stage): Conflict onset (5-year intermittency) & economic growth                                                           *
 *	(1)
 reg conflict_onset5 gdp_g gdp_gl (gpcp_g gpcp_gl), robust cluster(ccode)
 *	(2)
@@ -126,9 +113,7 @@ reg conflict_onset5 gdp_g gdp_gl Iccode* Iccyear* (gpcp_d gpcp_dl Iccode* Iccyea
 *	(6)
 reg conflict_onset5 gdp_g gdp_gl $x_id Iccyear* (gpcp_d gpcp_dl $x_id Iccyear*), robust cluster(ccode)
 
-*******************************************************************************
-* Table 8: Descriptive statistics                                             *
-*******************************************************************************
+*** TABLE 8: Descriptive statistics                                             
 * 	Panel A: Civil conflict
 sum anyconflict conflict_onset conflict_offset conflict_onset5
 *	Panel B: Precipitation
@@ -138,9 +123,7 @@ sum gdp_g gdp_gl agri_g ind_g
 *	Panel D: Country controls
 sum $x_id 
 
-*******************************************************************************
-* Table 10: Economic Growth & Rainfall: First Stage per period                *
-*******************************************************************************
+*** TABLE 10: Economic Growth & Rainfall: First Stage per period                
 *	(1)
 reg gdp_g gpcp_g gpcp_gl Iccode* Iccyear*, robust cluster(ccode)
 *	(2)
