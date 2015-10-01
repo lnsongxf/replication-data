@@ -11,6 +11,8 @@ The results also do not provide conclusive evidence for a link between growth in
 
 **Data used:** [UCDP/PRIO Armed Conflict Dataset](http://www.pcr.uu.se/research/ucdp/datasets/ucdp_prio_armed_conflict_dataset/), [World Bank Development Indicators](http://databank.worldbank.org/data/reports.aspx?source=world-development-indicators), [NASA Global Precipitation Climatology Project](http://precip.gsfc.nasa.gov/)
 
+![](http://i.imgur.com/0FjHa2G.png)
+
 #### Replication material
 
 Model estimation done with `Stata/IC 12.1`.
