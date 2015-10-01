@@ -8,7 +8,7 @@
 # This version:  07-12-2014                                                   *
 # First version: 07-12-2013                                                   *
 
-setwd("[SPECIFY DIR]")
+setwd("[DIR]/Publications/DPE_2015")
 
 ## Load libraries
 library(maps)
@@ -21,7 +21,7 @@ library(RColorBrewer)
 library(classInt)
 
 ## Load data
-d<-read.dta("tidy_data/re-analysis_shocks_conflict.dta")
+d<-read.dta("tidy_data/dpe_2015.dta")
 africa<-readShapeSpatial("raw_data/shp/africa.shp") # Check whether path is correct
 data<-read.csv("tidy_data/map_data.csv",header=TRUE)
 

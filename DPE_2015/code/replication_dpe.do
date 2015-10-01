@@ -13,7 +13,7 @@
 clear
 version 12
 cd <specify DIR>
-use re-analysis_rain_shocks_conflict.dta
+use dpe_2015.dta
 tsset ccode year
 
 * Generate country FE, country-specific time trend, and country controls
