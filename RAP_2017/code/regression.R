@@ -1,8 +1,7 @@
 ## Model estimation
 source("code/prep_regression.R")
 
-#------------------------------------------------------------------------------
-#### 1) Binary indicator ####
+#### Binary indicator ####
 # Main model, Poisson estimation 
 m1<-glm(norm.death~period+diff.gov+diff.gov*period,
         family="poisson"(link="log"))
@@ -44,8 +43,7 @@ summary(m6)
 clse(m6,1,cluster)
 auc(as.numeric(norm.death>=1),fitted(m6))
 
-#------------------------------------------------------------------------------
-#### 2) Continuous indicator ####
+#### Continuous indicator ####
 # Main model, Poisson estimation 
 m1<-glm(norm.death~period+violence.gov+violence.gov*period,
         family="poisson"(link="log"))
@@ -86,3 +84,5 @@ m6<-glm(norm.death~period+violence.cl+violence.cl*period,
 summary(m6) 
 clse(m6,1,cluster)
 auc(as.numeric(df$norm.death>=1),fitted(m6))
+
+## FIN

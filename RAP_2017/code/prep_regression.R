@@ -2,8 +2,7 @@
 # This version:  25-07-2016
 # First version: 07-01-2014
 
-#------------------------------------------------------------------------------
-#### 1)  Calculate spatial lag ####
+#### Calculate spatial lag ####
 require(spdep)
 require(maptools)
 load("data/processed.Rdata")
@@ -28,8 +27,8 @@ irq$violence.k.rw<-lag.listw(W,irq$violence.gov.re,
                              zero.policy=TRUE) # Reweighted lag
 df<-as.data.frame(irq)
 
-#------------------------------------------------------------------------------
-#### 2) Cluster violence level ####
+
+#### Cluster violence level ####
 
 # Individuals per cluster
 require(plyr)
@@ -70,9 +69,7 @@ M$violence.cl.rw<-(M$violent.deaths.w/M$ind.q)*100 # Reweighted count
 prov<-df[,c(10,35:39)]
 M<-merge(M,prov,all.x=TRUE)
 
-#------------------------------------------------------------------------------
-#### 3) Split data into periods ####
-### ERROR HERE
+#### Split data into periods ####
 
 # Subset data and do two melts
 lh<-M[,c(14,1:10,15,16,18:21)]   # Normal death count
@@ -104,16 +101,15 @@ df<-df[order(df$id),]
 df$d<-as.numeric(df$year_hh_formed>=2003 & df$period==0)
 df<-df[df$d!=1,]
 
-#------------------------------------------------------------------------------
-#### 4) Create binary Diff-in-Diff indicator #### 
+#### Create binary Diff-in-Diff indicator #### 
 df$diff.gov<-as.numeric(df$violence.gov>=quantile(df$violence.gov,c(.68)))
 df$diff.gov2<-as.numeric(df$violence.gov>=0.98)
 df$diff.gov.re<-as.numeric(df$violence.gov.re>=quantile(df$violence.gov.re,
                                                         c(.68)))
 df$diff.cluster<-as.numeric(df$violence.cl>=quantile(df$violence.cl,c(.68)))
 
-#------------------------------------------------------------------------------
-#### 5) Prepare data for regression #### 
+
+#### Prepare data for regression #### 
 source("code/functions.R")
 df<-df[order(df$cluster,df$hh,df$period),]
 cluster<-df$cluster
@@ -139,3 +135,5 @@ library(MASS)
 library(AER)
 library(pscl) 
 library(pROC)         
+
+## FIN

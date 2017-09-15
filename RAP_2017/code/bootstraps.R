@@ -17,7 +17,7 @@ cluster<-c("gov","cluster","hh") # Sample hierarchy
 source("code/functions.R")       # Bootstrap functions
 # NB - 'set.seed' is repeated since the script seems to reset it during steps.
 
-#### 1) Excess deaths with governorate resampling ####
+#### Excess deaths with governorate resampling ####
 # Pre-war exposure
 set.seed(2014);exp0.g<-replicate(1000,sum(resample(dat,cluster,c(T,T,T))$exp0))
 # During war exposure
@@ -30,8 +30,7 @@ set.seed(2014);gov1<-replicate(1000,sum(resample(dat,cluster,c(T,T,T))$norm.dum)
 # Violent deaths
 set.seed(2014);gov2<-replicate(1000,sum(resample(dat,cluster,c(T,T,T))$col))
 
-#------------------------------------------------------------------------------
-#### 2) Excess deaths with reweighed data ####
+#### Excess deaths with reweighed data ####
 # Pre-war exposure
 set.seed(2014);exp0.r<-replicate(1000,sum(resample(dat,cluster,c(F,T,T))$exp0))
 # During war exposure
@@ -44,8 +43,7 @@ set.seed(2014);r1<-replicate(1000,sum(resample(dat,cluster,c(F,T,T))$norm.dum.c)
 # Violent deaths
 set.seed(2014);r2<-replicate(1000,sum(resample(dat,cluster,c(F,T,T))$col.c))
 
-#------------------------------------------------------------------------------
-#### 3) Excess deaths with reweighed data (households) ####
+#### Excess deaths with reweighed data (households) ####
 # Pre-war deaths
 set.seed(2014);rh0<-replicate(1000,sum(resample(dat,cluster,c(F,T,T))$norm.pre.h))
 # During-war deaths
@@ -53,8 +51,7 @@ set.seed(2014);rh1<-replicate(1000,sum(resample(dat,cluster,c(F,T,T))$norm.dum.h
 # Violent deaths
 set.seed(2014);rh2<-replicate(1000,sum(resample(dat,cluster,c(F,T,T))$col.h))
 
-#------------------------------------------------------------------------------
-#### 4) Excess deaths with reweighed data and governorate resampling ####
+#### Excess deaths with reweighed data and governorate resampling ####
 # Pre-war deaths
 set.seed(2014);f0<-replicate(1000,sum(resample(dat,cluster,c(T,T,T))$norm.pre.c))
 # During-war deaths
@@ -62,8 +59,7 @@ set.seed(2014);f1<-replicate(1000,sum(resample(dat,cluster,c(T,T,T))$norm.dum.c)
 # Violent deaths
 set.seed(2014);f2<-replicate(1000,sum(resample(dat,cluster,c(T,T,T))$col.c))
 
-#------------------------------------------------------------------------------
-#### 5) Certified deaths only ####
+#### Certified deaths only ####
 bts2<-subset(bts,bts$cert.lvl!=3 & bts$cert.lvl!=4) 
 dat2<-aggregate(cbind(exp0,exp1,norm.pre,norm.dum,col,col.c,norm.pre.c,norm.dum.c)
                ~hh+cluster+gov,bts2,FUN=sum)
@@ -80,8 +76,7 @@ set.seed(2014);d1<-replicate(1000,sum(resample(dat2,cluster,c(F,T,T))$norm.dum))
 # Violent deaths
 set.seed(2014);d2<-replicate(1000,sum(resample(dat2,cluster,c(F,T,T))$col))
 
-#------------------------------------------------------------------------------
-#### 6) Certified deaths, reweighed and governorate resampling ####
+#### Certified deaths, reweighed and governorate resampling ####
 # Exposure
 set.seed(2014);exp0.cf<-replicate(1000,sum(resample(dat2,cluster,c(T,T,T))$exp0))
 set.seed(2014);exp1.cf<-replicate(1000,sum(resample(dat2,cluster,c(T,T,T))$exp1))
@@ -95,8 +90,7 @@ set.seed(2014);cf1<-replicate(1000,sum(resample(dat2,cluster,
 # Violent deaths
 set.seed(2014);cf2<-replicate(1000,sum(resample(dat2,cluster,c(T,T,T))$col.c))
 
-#------------------------------------------------------------------------------
-#### 7) Excluding deaths with no certificate ####
+#### Excluding deaths with no certificate ####
 bts2<-subset(bts,bts$cert.lvl!=3) 
 dat2<-aggregate(cbind(exp0,exp1,norm.pre,norm.dum,col)
                ~hh+cluster+gov,bts2,FUN=sum)
@@ -115,8 +109,8 @@ set.seed(2014);dum.nc<-replicate(1000,sum(resample(dat2,cluster,
 # Violent deaths
 set.seed(2014);col.nc<-replicate(1000,sum(resample(dat2,cluster,
                                                    c(F,T,T))$col))
-#------------------------------------------------------------------------------
-#### 8) Excluding deaths with certificate not shown ####
+
+#### Excluding deaths with certificate not shown ####
 bts2<-subset(bts,bts$cert.lvl!=4) 
 dat2<-aggregate(cbind(exp0,exp1,norm.pre,norm.dum,col)
                ~hh+cluster+gov,bts2,FUN=sum)
@@ -136,8 +130,7 @@ set.seed(2014);dum.ns<-replicate(1000,sum(resample(dat2,cluster,
 # Violent deaths
 set.seed(2014);col.ns<-replicate(1000,sum(resample(dat2,cluster,c(F,T,T))$col))
 
-#------------------------------------------------------------------------------
-#### 9) Exluding deaths with no certificate (R) ####
+#### Exluding deaths with no certificate (R) ####
 bts2<-subset(bts,bts$cert.lvl!=3) 
 dat2<-aggregate(cbind(exp0,exp1,norm.pre.c,norm.dum.c,col.c)
                ~hh+cluster+gov,bts2,FUN=sum)
@@ -158,8 +151,7 @@ set.seed(2014);dum.nc.r<-replicate(1000,sum(resample(dat2,cluster,
 set.seed(2014);col.nc.r<-replicate(1000,sum(resample(dat2,cluster,
                                                      c(T,T,T))$col.c))
 
-#------------------------------------------------------------------------------
-#### 10) Excluding deaths with certificate not shown (R) ####
+#### Excluding deaths with certificate not shown (R) ####
 bts2<-subset(bts,bts$cert.lvl!=4) 
 dat2<-aggregate(cbind(exp0,exp1,norm.pre.c,norm.dum.c,col.c)
                ~hh+cluster+gov,bts2,FUN=sum)
@@ -182,8 +174,8 @@ set.seed(2014);col.ns.r<-replicate(1000,sum(resample(dat2,cluster,
 
 save(list=ls(all=TRUE),file="output/bootstraps.RData") # Save output
 
-#------------------------------------------------------------------------------
-#### 11) Tables results ####
+
+#### Tables results ####
 # NB - Order of panels has changed in paper
 
 # Calculate total population
@@ -369,3 +361,5 @@ PanelB<-data.frame(specification=what,lower.estimate=e.lower,
 
 save(list=c("PanelA","PanelB"),file="output/bootstrap_estimates.RData")
 
+
+## FIN

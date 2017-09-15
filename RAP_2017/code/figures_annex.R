@@ -9,7 +9,7 @@ load("data/processed.Rdata")
 require(sp)
 gadm<-readShapeSpatial("raw_data/IRQ_adm1.shp")
 
-#------------------------------------------------------------------------------
+
 #### Process fatality data ####
 deaths<-deaths[deaths$cluster!=47 &
                  deaths$cluster!=73,] # Drop cluster 47 and 73 
@@ -37,7 +37,6 @@ deaths$date <- paste(deaths$yod, deaths$mod, deaths$day, sep="-")
 deaths$date <- as.Date(deaths$date,format="%Y-%m-%d")
 deaths$day<-NULL
 
-#------------------------------------------------------------------------------
 #### Data coverage ####
 
 # Aggregate data per governorate
@@ -66,7 +65,6 @@ axis.Date(1,at=seq(min(f$date),max(f$date),by="12 mon"),
           format="%b-%Y",las=2,tick=FALSE)
 
 
-#------------------------------------------------------------------------------
 #### Deaths over time ####
 # Set NAs for 'mod' to June (as in original work)
 sum(is.na(deaths$mod)) # 26 obs.
@@ -106,7 +104,6 @@ axis(1,at=2000:2010,tick=FALSE)
 axis(2,at=seq(0,80,10),las=1,tick=FALSE)
 mtext("Number of deaths",side=2,line=3,cex=1.5)
 
-#------------------------------------------------------------------------------
 #### Deaths per governorate ####
 fig<-provinces[order(provinces$norm.dum,provinces$col),]
 fig$gov_name<-factor(fig$gov_name,levels=fig$gov_name)
@@ -122,7 +119,8 @@ axis(2,at=1:18,label=fig$gov_name,tick=FALSE,las=1)
 legend(45,5,c("Non-violent deaths","Violent deaths"),
        cex=1.7,pch=c(15,1),col=c("black","black"),
        bty="n",y.intersp=c(0.3))
-#------------------------------------------------------------------------------
+
+
 #### Choropleth maps ####
 # Calculate total deaths per governorate per 1000 per year
 provinces$pop_before<-provinces$pop_pre/26*12
@@ -176,6 +174,6 @@ plot(gadm,col=col.regions[findInterval(gadm$violent_cap,brks,all.inside=TRUE)],
 legend(39,31, legend=leglabs(brks), fill=col.regions, bty="n",cex=1.5,
        y.intersp=.5)
 
-#------------------------------------------------------------------------------
-## END
+
+## FIN
 

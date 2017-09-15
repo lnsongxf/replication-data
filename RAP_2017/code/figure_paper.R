@@ -2,7 +2,6 @@
 # This version:  27-07-2017
 # First version: 21-11-2014
 # NB - Panel order has been changed in paper
-setwd("~/Dropbox/Sandbox/irq_e")
 
 #### Uncertainty intervals excess deaths ####
 # Load data
@@ -50,7 +49,7 @@ axis(2,at=y.axis,label=spec,las=1,tick=FALSE,line=-2)
 axis(1,tick=FALSE)
 
 
-# Panel (b)
+# Panel (b) 
 plot(centralA,y.axis,type="n",axes=F,xlab="", ylab="",
      main="(b) All deaths",xlim=x,ylim=c(1,4.25))
 rect(lowerA[4],.8,upperA[4],1.2,col="grey90",lwd=0,border=NA)
@@ -71,5 +70,5 @@ axis(1,tick=FALSE)
 ##
 rm(list=ls()) # Clean workspace
 
-## END
+## FIN
 

@@ -1,6 +1,5 @@
 ## Functions
 
-#------------------------------------------------------------------------------
 ##### Bootstrap resampling ####
 # Code taken from: http://biostatmatt.com/archives/2125
 # NB - the code calls itself
@@ -29,7 +28,7 @@ resample <- function(dat, cluster, replace) {
   do.call(rbind, sub)
 }
 
-#------------------------------------------------------------------------------
+
 # Robust clustered standard errors
 # Source:
 # http://people.su.se/~ma/mcluster.R
@@ -55,8 +54,7 @@ clse <-
     vcovCL <- dfc*sandwich(fm, meat=crossprod(uj)/N)*dfcw
     coeftest(fm, vcovCL) }
 
-#------------------------------------------------------------------------------
-# Rescale variables 
-stan<-function(x){
-  (x-mean(x))/(2*sd(x))  
-}
+#### Rescale variables ####
+stan<-function(x){ (x-mean(x))/(2*sd(x)) }
+
+## FIN

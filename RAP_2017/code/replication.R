@@ -6,7 +6,7 @@
 # This version:  25-07-2016
 # First version: 29-11-2013
 
-#### 1) Clean data ####
+#### Clean data ####
 deaths<-read.csv("raw_data/hh_deaths.csv",
                  header=TRUE,sep=",",row.names=NULL)
 households<-read.csv("raw_data/hh_roster.csv",
@@ -60,7 +60,7 @@ d.pre<-sum(deaths$norm_pre)    # Pre-war: 44
 d.during<-sum(deaths$norm_dum) # Normal during war: 262
 d.war<-sum(deaths$col)         # Fatalities: 76
 
-#### 2) Calculate exposure: households ####
+#### Calculate exposure: households ####
 # Following the procedure from the original code
 
 ## Year of birth and year household formed
@@ -98,8 +98,7 @@ households[households$yob<=households$t0,]$exp1<-
   households[households$yob<=households$t0,]$t0
 sum(households$exp1) # 73282.96
 
-#------------------------------------------------------------------------------
-#### 3) Calculate exposure: deaths ####
+#### Calculate exposure: deaths ####
 
 ## Year of birth and year household formed
 deaths$yod<-deaths$yod+(deaths$mod-0.5)/12
@@ -145,8 +144,7 @@ py0<-sum(households$exp0)+sum(deaths$exp0) # Pre-war: 15215.72
 py1<-sum(households$exp1)+sum(deaths$exp1) # During war: 74510.78 
 
 
-#------------------------------------------------------------------------------
-#### 4) Replication: Central estimates ####
+#### Replication: Central estimates ####
 # We start our replication by calculating the central estimates
 
 ## Death rates
@@ -166,8 +164,7 @@ excess*py/1000
 dr<-1000*d.war/py1
 dr*py/1000 # 249452
 
-#------------------------------------------------------------------------------
-#### 5) Replication: Bootstrap estimations ####
+#### Replication: Bootstrap estimations ####
 
 ## Append all required data
 require(plyr)
@@ -202,8 +199,7 @@ set.seed(2014);b.exp0<-replicate(1000,sum(resample(dat,cluster,c(F,T,T))$exp0))
 # During-war exposure
 set.seed(2014);b.exp1<-replicate(1000,sum(resample(dat,cluster,c(F,T,T))$exp1))
 
-#------------------------------------------------------------------------------
-#### 6) Calculate uncertainty intervals ####
+#### Calculate uncertainty intervals ####
 probs<-(1+c(-1,1)*0.95)/2 # 95% interval
 
 ## Excess deaths
@@ -228,8 +224,7 @@ violent.deaths<-b
 quantile(a,probs=probs) # 0.72; 1.37
 quantile(b,probs=probs) # 175266; 334831
 
-#------------------------------------------------------------------------------
-#### 7) Figure bootstrap estimates ####
+#### Figure bootstrap estimates ####
 library(PerformanceAnalytics)
 library(psych)
 options(scipen=4)     
@@ -240,3 +235,6 @@ chart.Boxplot(d,main="Bootstrap estimates \n
               (1000 replicates of clusters and households)",
               xlab="",ylab="",element.color="transparent",
               as.Tufte=TRUE,ylim=c(-500000,1100000))
+
+
+## FIN

@@ -4,8 +4,7 @@
 # This version:  01-02-2017
 # First version: 09-12-2013
 
-#------------------------------------------------------------------------------
-#### 1) Clean data ####
+#### Clean data ####
 # Similar to the replication file we stick as close as possible to 
 # the original iPython script. 
 # Deviations will be indicated with (*).
@@ -62,8 +61,8 @@ table(deaths$norm.pre) # 44
 table(deaths$norm.dum) # 263
 table(deaths$col)      # 75
 
-#------------------------------------------------------------------------------
-#### 2) Calculate exposure: households ####
+
+#### Calculate exposure: households ####
 # Following the procedure from the original code
 ## Tally person years observed for a row of hh roster for a given time period
 hh<-households[,c(1:3,5,6)] 
@@ -95,8 +94,7 @@ sum(hh$exp1) # 73282.96 during war person-years
 
 hh.s<-hh[,c(2,1,3,10,11)]
 
-#------------------------------------------------------------------------------
-#### 3) Calculate exposure: deaths ####
+#### Calculate exposure: deaths ####
 
 ## Create identifier and subset
 deaths$id<-1:nrow(deaths)
@@ -129,8 +127,7 @@ deaths<-merge(deaths,d[,c(7,10,11)])
 py0<-sum(hh$exp0)+sum(d$exp0) # Pre-war: 15335.32
 py1<-sum(hh$exp1)+sum(d$exp1) # During: 74636.51
 
-#------------------------------------------------------------------------------
-#### 4) Accounting for death certificates ####
+#### Accounting for death certificates ####
 deaths$cert.lvl<-as.factor(deaths$death_cert)
 deaths$cert.lvl<-as.numeric(deaths$cert.lvl)
 
@@ -159,8 +156,7 @@ py1.d<-sum(hh$exp1)+
   sum(deaths[deaths$cert.lvl!=3 & 
                deaths$cert.lvl!=4,]$exp1) # During war: 74270.25
 
-#------------------------------------------------------------------------------
-#### 5) Calculate exposure per province ####
+#### Calculate exposure per province ####
 hh<-hh[,c(3,10:11)]
 d<-d[,c(3,10:11)]
 hh<-aggregate(.~gov,hh,FUN=sum)
@@ -173,8 +169,8 @@ exp$exp1<-exp$exp1+exp$exp11
 exp<-exp[,1:3]
 rm(d,hh) # Housekeeping
 
-#------------------------------------------------------------------------------
-#### 6) Identify governorates ####
+
+#### Identify governorates ####
 ## Find out number of clusters and household members per governorate
 require(plyr)
 provinces<-ddply(households,~gov,summarise,
@@ -264,8 +260,7 @@ provinces$E.hh<-provinces$pop/provinces$hh.ave
 
 rm(list=c("hhh","ind")) # Housekeeping
 
-#------------------------------------------------------------------------------
-#### 7) Reweighing the data ####
+#### Reweighing the data ####
 ## Merge all data
 deaths<-merge(deaths,provinces,all.x=TRUE)
 deaths<-deaths[complete.cases(deaths),]
@@ -305,8 +300,7 @@ provinces<-deaths.gov
 save(list=c("provinces","bts","households","deaths","deaths.gov"),
      file="data/processed.Rdata")
 
-#------------------------------------------------------------------------------
-#### 8) Re-analysis: Central estimates ####
+#### Re-analysis: Central estimates ####
 
 ## Create vectors
 what<-vector(mode="numeric", length=0)
@@ -439,3 +433,5 @@ table<-data.frame(specification=what,central_estimate=exc,excess_rate=exc.r,
                     non_violent_estimate=exc.n,non_violent_rate=exc.r.n)
 
 save(list="table",file="output/reanalysis_central.RData") # Save data
+
+## FIN
