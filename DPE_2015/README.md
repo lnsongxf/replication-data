@@ -1,5 +1,5 @@
 ### Economic Shocks and Civil Conflict Onset in Sub-Saharan Africa, 1981-2010
-[Defence and Peace Economics](http://www.tandfonline.com/doi/full/10.1080/10242694.2014.887489), 2015 (26:2).
+[Defence and Peace Economics](http://www.tandfonline.com/doi/full/10.1080/10242694.2014.887489), 2015.
 
 **Abstract:** 
 A number of studies have examined the link between rainfall and conflict but results so far have been inconclusive.
