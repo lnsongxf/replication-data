@@ -1,7 +1,5 @@
-Economic Shocks and Civil Conflict Onset in Sub-Saharan Africa, 1981-2010
-================
-
-Published in [Defence and Peace Economics, February 2015, 26 (2)](http://www.tandfonline.com/doi/full/10.1080/10242694.2014.887489).
+### Economic Shocks and Civil Conflict Onset in Sub-Saharan Africa, 1981-2010
+[Defence and Peace Economics](http://www.tandfonline.com/doi/full/10.1080/10242694.2014.887489), February 2015, 26 (2)
 
 **Summary of research:** 
 A number of studies have examined the link between rainfall and conflict but results so far have been inconclusive.
@@ -9,7 +7,10 @@ This study examines the effect of rainfall on economic performance in different 
 The empirical analysis finds no support for a strong relation between rainfall and conflict as most results are not robust to different model specifications. 
 The results also do not provide conclusive evidence for a link between growth in specific economic sectors and civil conflict onset.
 
-**Data used:** [UCDP/PRIO Armed Conflict Dataset](http://www.pcr.uu.se/research/ucdp/datasets/ucdp_prio_armed_conflict_dataset/), [World Bank Development Indicators](http://databank.worldbank.org/data/reports.aspx?source=world-development-indicators), [NASA Global Precipitation Climatology Project](http://precip.gsfc.nasa.gov/)
+**Data used:** 
+* [UCDP/PRIO Armed Conflict Dataset](http://www.pcr.uu.se/research/ucdp/datasets/ucdp_prio_armed_conflict_dataset/)
+* [World Bank Development Indicators](http://databank.worldbank.org/data/reports.aspx?source=world-development-indicators)
+* [NASA Global Precipitation Climatology Project](http://precip.gsfc.nasa.gov/)
 
 ![](http://i.imgur.com/0FjHa2G.png)
 
