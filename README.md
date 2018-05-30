@@ -5,7 +5,6 @@ If you encounter any difficulties in replicating the results; find errors; or ha
 
 #### Half a million excess deaths in the Iraq war: Terms and conditions may apply
 [Research and Politics](http://journals.sagepub.com/doi/full/10.1177/2053168017732642)<br>
-`RAP_2017`<br>
 
 *Hagopian et al. (2013) published a headline-grabbing estimate for the Iraq war of half a million excess deaths, i.e. deaths that would not have happened without the war. 
 We reanalyse the data from the University Collaborative Iraq Mortality Study and refute their dramatic claim. 
@@ -19,7 +18,6 @@ estimates for non-violent deaths alone, and use differences-in-differences estim
 
 #### Food imports, international prices, and violence in Africa
 [Oxford Economic Papers](http://oep.oxfordjournals.org/content/68/3/758.abstract)<br>
-`OEP_2016`<br>
 
 *This study examines the effect of food price fluctuations on violence in Africa, using international food prices as a source of exogenous shock weighted by a country’s import pattern of major food commodities to create a country-specific food price index. 
 The regression analysis shows that between 1990 and 2011, food price increases are associated with higher levels of violence. 
@@ -30,7 +28,6 @@ Despite the statistically significant results, the predictive power of food pric
 
 #### Economic shocks & civil conflict onset in Sub-Saharan Africa, 1981–2010
 [Defence and Peace Economics](http://www.tandfonline.com/doi/abs/10.1080/10242694.2014.887489)<br>
-`DPE_2015`<br>
 
 *A number of studies have examined the link between rainfall and conflict but results so far have been inconclusive. 
 This study examines the effect of rainfall on economic performance in different sectors and conflict onset. The
