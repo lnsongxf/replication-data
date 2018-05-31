@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #==============================================================================
 # Script for aggregation precipitation data from GPCP V2.2
 # Data made available in ASCII-format by David Bolvin from NASA GPCP
@@ -187,4 +186,3 @@ cntsCells <- t(sapply( cnts
 # write data to file
 prec <- as.data.frame(cntsCells)
 write.csv(prec, file="data/prec.csv")
->>>>>>> 2e175de11d0f22c8084386f4339cab06837091aa

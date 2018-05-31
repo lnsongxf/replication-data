@@ -32,12 +32,11 @@ The repository contains three folders with the following content:
 
 `raw_data` contains:
 
-* `NASA`, a folder with the raw rainfall data in ASCII format    
 * `shp`, a folder  with the shapefiles needed for `precipitation.R` and `figures_dpe.R`       
 
 `tidy_data` contains:
 
-* `dpe_2015`, which is the main dataset provided as a Stata `.dta` file and as a `.csv` file    
+* `dpe_2015`, which is the main dataset provided as a Stata `.dta` file
 *  `map_data.csv`, is the csv-file needed for `figures_dpe.R`        
 *  `precipitation.csv`, is a csv-file with rainfall data aggregated to country-year level, the product of `precipitation.R`. 
 
