@@ -1,6 +1,6 @@
 ## Replication "David Versus Goliath: Fundamental Patterns and Predictions in Modern Wars and Terrorist Campaigns" <br>
 
-*Last update:* 2018 06 22 <br>
+*Last update:* 2018 09 07 <br>
 
 
 This repository contains all the material needed to replicate the results in the paper *"David Versus Goliath: Fundamental Patterns and Predictions in Modern Wars and Terrorist Campaigns"*. 
