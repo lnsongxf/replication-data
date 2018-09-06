@@ -2,7 +2,7 @@
 # Analysis: fit power law to data
 # Last update: 2018 04 27
 #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
-setwd("~/Dropbox/rr/plos")
+setwd('~/github/replication-data/2018-plos')
 source('code/prepare_data.R') # Need to run twice sometimes
 library(poweRlaw)
 

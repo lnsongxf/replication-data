@@ -3,7 +3,7 @@
 # Terrorism data
 # Last update: 2018 06 11
 #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
-setwd("~/Dropbox/rr/plos")
+setwd('~/github/replication-data/2018-plos')
 source('code/prepare_data_terrorism.R')
 library(poweRlaw)
 

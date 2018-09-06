@@ -4,7 +4,7 @@
 # File shoud be sourced
 # Last update: 2018 04 27
 #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
-setwd("~/Dropbox/rr/plos")
+setwd('~/github/replication-data/2018-plos')
 load("data/ged171.Rdata")
 
 library(plyr)

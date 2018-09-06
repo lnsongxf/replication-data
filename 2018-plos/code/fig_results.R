@@ -2,7 +2,7 @@
 # Figure results
 # Last update: 2018 06 19
 #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
-setwd('~/Dropbox/rr/plos')
+setwd('~/github/replication-data/2018-plos')
 load('output/results.RData')
 
 # Libraries

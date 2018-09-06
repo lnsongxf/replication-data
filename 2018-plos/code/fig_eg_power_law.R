@@ -2,7 +2,7 @@
 # Example power law distributions
 # Last update: 2018 06 20
 #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
-setwd('~/Dropbox/rr/plos')
+setwd('~/github/replication-data/2018-plos')
 library(poweRlaw)
 
 load('output/results.RData')

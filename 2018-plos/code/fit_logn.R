@@ -2,7 +2,7 @@
 # Robustness check: log-normal distribution
 # Last update: 2018 04 27 
 #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
-setwd("~/Dropbox/sandbox/plos")
+setwd('~/github/replication-data/2018-plos')
 source('code/prepare_data.R')
 library(poweRlaw)
 

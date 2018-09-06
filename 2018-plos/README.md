@@ -1,6 +1,6 @@
 ## Replication "David Versus Goliath: Fundamental Patterns and Predictions in Modern Wars and Terrorist Campaigns" <br>
 
-*Last update:* 2018 09 07 <br>
+*Last update:* 2018 06 22 <br>
 
 
 This repository contains all the material needed to replicate the results in the paper *"David Versus Goliath: Fundamental Patterns and Predictions in Modern Wars and Terrorist Campaigns"*. 
@@ -53,11 +53,9 @@ The example in figure 1 is produced by `fig_eg_power_law.R`.
 
 ### **`output`**
 
-Contains the results as produced by the scripts in the *`code`* folder. 
+Contains summary of results produced by the scripts in the *`code`* folder. 
 
-1. `fit_power_law.R` will create `fitted_values.csv`, `results.RData`
-2. `cross_validation.R` will create `rmse.pl.RData`
-3. `fit_logn.R` will create `results_ln.RData`
-4. `fit_power_law_terrorism.R` will create `fitted_values_terrorism.csv`, `results_terrorism.RData`
+1. `fit_power_law.R` will create `fitted_values.csv`
+2. `fit_power_law_terrorism.R` will create `fitted_values_terrorism.csv`
 
 

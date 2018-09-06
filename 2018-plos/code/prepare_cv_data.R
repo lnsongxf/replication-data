@@ -2,7 +2,7 @@
 # Prepare data
 # Calculate fatality ratios in conflict data
 #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
-setwd('~/Dropbox/rr/plos')
+setwd('~/github/replication-data/2018-plos')
 load('data/ged171.Rdata')
 library(plyr)
 

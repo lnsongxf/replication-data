@@ -7,7 +7,7 @@
 # File should be sourced
 # Last update: 2018 04 30
 #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
-setwd("~/Dropbox/rr/plos")
+setwd('~/github/replication-data/2018-plos')
 load('data/globalterrorismdb_0617dist.RData')
 
 library(plyr)
