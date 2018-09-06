@@ -79,9 +79,4 @@ intv<-c()
 rmse<-c()
 error<-c()
 
-
-
-
-
 ## FIN
-

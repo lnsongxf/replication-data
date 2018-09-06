@@ -3,7 +3,7 @@
 # Last update: 2018 04 27 
 #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 setwd('~/github/replication-data/2018-plos')
-source('code/prepare_data.R')
+source('code/prepare-data.R')
 library(poweRlaw)
 
 #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#

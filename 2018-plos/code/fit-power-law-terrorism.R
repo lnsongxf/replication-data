@@ -4,7 +4,7 @@
 # Last update: 2018 06 11
 #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 setwd('~/github/replication-data/2018-plos')
-source('code/prepare_data_terrorism.R')
+source('code/prepare-data-terrorism.R')
 library(poweRlaw)
 
 #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#

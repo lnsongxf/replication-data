@@ -69,7 +69,6 @@ sum(p<.05)
 
 quantile(alpha,probs=(1+c(-1,1)*0.95)/2)
 
-
 mean(unlist(x));sd(unlist(x))
 median(unlist(x))
 mean(l);median(l)
