@@ -3,7 +3,7 @@
 # Terrorism data
 # Last update: 2018 06 11
 #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
-setwd('~/github/replication-data/2018-plos')
+setwd('~/github/replication-data/david-vs-goliath')
 source('code/prepare-data-terrorism.R')
 library(poweRlaw)
 

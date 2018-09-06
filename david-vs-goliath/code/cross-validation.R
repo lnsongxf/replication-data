@@ -3,7 +3,7 @@
 # Fatality ratios
 # Last update: 2018 04 27
 #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
-setwd('~/github/replication-data/2018-plos')
+setwd('~/github/replication-data/david-vs-goliath')
 source('code/prepare-cv-data.R')
 library(dplyr)
 

@@ -2,7 +2,7 @@
 # Prepare data
 # Calculate fatality ratios in conflict data
 #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
-setwd('~/github/replication-data/2018-plos')
+setwd('~/github/replication-data/david-vs-goliath')
 load('data/ged171.Rdata')
 library(plyr)
 

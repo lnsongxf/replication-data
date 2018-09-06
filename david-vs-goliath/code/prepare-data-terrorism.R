@@ -7,7 +7,7 @@
 # File should be sourced
 # Last update: 2018 04 30
 #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
-setwd('~/github/replication-data/2018-plos')
+setwd('~/github/replication-data/david-vs-goliath')
 load('data/globalterrorismdb_0617dist.RData')
 
 library(plyr)
