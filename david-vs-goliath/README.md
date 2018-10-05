@@ -1,4 +1,5 @@
-## Replication "David Versus Goliath: Fundamental Patterns and Predictions in Modern Wars and Terrorist Campaigns" <br>
+## Replication "Fundamental patterns and predictions in modern wars and terrorist campaigns". 
+" <br>
 
 *Last update:* 2018 06 22 <br>
 
