@@ -1,10 +1,10 @@
-## Replication "Fundamental patterns and predictions in modern wars and terrorist campaigns". 
+## Replication "Fundamental patterns and predictions of event size distribution in modern wars and terrorist campaigns". 
 " <br>
 
 *Last update:* 2018 06 22 <br>
 
 
-This repository contains all the material needed to replicate the results in the paper *"David Versus Goliath: Fundamental Patterns and Predictions in Modern Wars and Terrorist Campaigns"*. 
+This repository contains all the material needed to replicate the results in the paper *"Fundamental patterns and predictions of event size distribution in modern wars and terrorist campaigns"*. 
 The analysis was carried out in R, and information on the session can be consulted in `session_info.md`. 
 There are three folders
 
