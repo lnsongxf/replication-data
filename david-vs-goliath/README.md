@@ -1,5 +1,4 @@
-## Replication "Fundamental patterns and predictions of event size distribution in modern wars and terrorist campaigns". 
-" <br>
+## Replication "Fundamental patterns and predictions of event size distribution in modern wars and terrorist campaigns".<br>
 
 *Last update:* 2018 06 22 <br>
 
