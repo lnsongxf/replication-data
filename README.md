@@ -7,6 +7,7 @@ weezel.van (at) gmail.com
 
 #### `climate-conflict`
 van Weezel, S (2018) "On climate and conflict: Precipitation decline and communal conflict in Ethiopia and Kenya". Accepted manuscript *Journal of Peace Research*. Pre-publication upload.   
+
 **Data submitted:** 21 June 2017  
 **Date accepted:** 3 December 2018
 
