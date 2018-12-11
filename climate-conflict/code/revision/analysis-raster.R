@@ -1,6 +1,7 @@
 #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 # Analysis results data aggregated to cell level
 # Request by R1 + R2
+# Creates figure A4
 # Last update 2018 05 16
 #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 options(scipen=1)
@@ -12,7 +13,7 @@ library(jagstools)
 
 # Run analysis (this will take about 6 hours)
 source('code/rr/load-raster.R') 
-source('code/rr/raster-fit.R')
+source('code/rr/fit-raster.R')
 
 # 1.1) Table regression results
 print(m1$BUGSoutput$summary[1:5,c(1,2,3,7)],digits.summary=3) # Col. 2
@@ -72,7 +73,6 @@ for(i in 1:J){
 i<-ifelse(X$events.com!=0,1,0)
 r<-X$belg.g
 
-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 # 4.2) Figure: prediction error
 par(mar=c(5,5,3,1),bty="n",mfrow=c(1,2),
     las=1,cex.axis=2,cex.lab=2,cex.main=2,pty="s")

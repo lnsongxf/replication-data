@@ -33,9 +33,10 @@ The `estimation` folder contains all the code for the statistical analysis
 * `models.R` contains all the models and is called by `load.R`
 * `fit_models.R` is the main estimation code, producing the results as reported in table 1.
 * `cross_validation.R` executes the cross validation exercise
-* `BEST.R` conducts the Bayesian t-test which is included in the main dataset and used in the regressions
+* `BEST.R` conducts the Bayesian t-test which is included in the main dataset and used in the regressions 
  
-The code in folder `tables-figures` can be used to create the tables and figures in the paper and appendix.<br> 
+The code in folder `tables-figures` can be used to create the tables and figures in the paper and appendix.
+Note that figure 9 is created by `cross-section-time-series.R`; A2 by `BEST.R`; and A4 by `analysis-rastert.R`.<br> 
 
 A number of additional tests were carried out based on various suggestions made by the reviewers. 
 Specifically the reviewers asked for 

@@ -1,6 +1,7 @@
 #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 # Cross-section time-series regression
 # Request by R2
+# Creates figure 9
 # Last update 2018 05 14
 #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 # Functions
